@@ -425,10 +425,7 @@
           
   <div class="comments" id="comments">
     
-       
-         <div onclick="ShowGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-         <div id="gitment-container" style="display:none"></div>
-       
+      <div id="gitalk-container"></div>
     
   </div>
 
@@ -682,29 +679,20 @@
 
 
 
-   
-   
-   
-   
-   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-   
-       <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'lianqiangjava',
-                   repo: 'lianqiangjava.github.io',
-                   oauth: {
-                       client_id: '3a898860499006d001be',
-                       client_secret: '0e4e22e3c3c85a8ed88c49ba1b0430daf3aa5d0a',
-                   }});
-               gitment.render('gitment-container');
-           }
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3a898860499006d001be',
+          clientSecret: '0e4e22e3c3c85a8ed88c49ba1b0430daf3aa5d0a',
+          repo: 'lianqiangjava.github.io',
+          owner: 'lianqiangjava',
+          admin: ['lianqiangjava'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
        </script>
-   
 
 
   
