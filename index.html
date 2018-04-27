@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/dex65536/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/dex65536/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曲连强">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/dex65536/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/04/27/dex65536/" itemprop="url">Eclipse dex 65536 问题解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T21:41:49+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T19:50:02+08:00">
+                2018-04-27
               </time>
             
 
@@ -335,6 +335,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -342,7 +364,7 @@
 
           
           
-             <span id="/2018/04/26/dex65536/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/04/27/dex65536/" class="leancloud_visitors" data-flag-title="Eclipse dex 65536 问题解决方案">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -374,46 +396,21 @@
 
       
         
-          
-            <h1 id="Eclipse-dex-65536-问题解决方案"><a href="#Eclipse-dex-65536-问题解决方案" class="headerlink" title="Eclipse dex 65536 问题解决方案"></a>Eclipse dex 65536 问题解决方案</h1><h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
-<h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因:"></a>产生原因:</h4><blockquote>
-<p>早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时，就容易发生方法数目超过65536，此时编译APK时就会发生Unable to execute dex这个问题。</p>
-</blockquote>
-<h3 id="二、解决方案"><a href="#二、解决方案" class="headerlink" title="二、解决方案"></a>二、解决方案</h3><h4 id="实现方法："><a href="#实现方法：" class="headerlink" title="实现方法："></a>实现方法：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将项目中不重要的jar包集中用ant打包成一个jar包，然后再用SDK下build-tools目录里的</span><br><span class="line"></span><br><span class="line">dx.bat将这个jar包编译为classes2.dex文件，在APP启动后动态加载这个分包dex。</span><br></pre></td></tr></table></figure>
-<p>1.<strong>下载Ant工具 <a href="https://ant.apache.org/bindownload.cgi" target="_blank">apache-ant-1.10.3-bin.zip</a></strong> </p>
-<pre>
-    配置系统环境变量，ANT_HOME : D:\soft\apache-ant-1.10.3(根据自己目录)，Path : ;%ANT_HOME%\bin;
-</pre>
-
-
-<p>2.<strong>创建build.xml配置文件，此文件用于ant合并jar包</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">其中project标签里的&apos;basedir&apos;属性填写jar包所在的文件夹路径(路径随意);</span><br><span class="line"></span><br><span class="line">jar标签里的&apos;destfile&apos;为合并后的名字(名字随意);</span><br><span class="line"></span><br><span class="line">zipfileset标签里的&apos;src&apos;为要合并的jar包名字;</span><br><span class="line"></span><br><span class="line">注意不要把APP启动时加载的jar包进行合并，不然可能导致找不到类错误</span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">name</span>=<span class="string">"con"</span> <span class="attr">basedir</span>=<span class="string">"D:\workspace\MyProject\libs"</span> <span class="attr">default</span>=<span class="string">"makeSuperJar"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"makeSuperJar"</span> <span class="attr">description</span>=<span class="string">"description"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jar</span> <span class="attr">destfile</span>=<span class="string">"all.jar"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"gson-2.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"zxing.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"nineoldandroids-2.4.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"universal-image-loader-1.9.3.jar"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">jar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>3.<strong>执行命令:</strong>  <strong><em><code>ant -buildfile D:\workspace\MyProject\libs\build.xml</code></em></strong></p>
-<p><img src="./images/01.png" alt="" title="执行命令"></p>
-<p><strong>执行成功后会生成合并后的all.jar包</strong></p>
-<p><img src="./images/02.png" alt="" title="执行命令"></p>
-<p>4.<strong>然后到安卓SDK build-tool目录里使用dx.bat将合成的all.jar包编译成classes2.dex文件，执行命令:</strong></p>
-<p><strong><em><code>dx --dex --output=D:\workspace\MyProject\libs\classes2.dex D:\workspace\MyProject\libs\all.jar</code></em></strong></p>
-<p><img src="./images/03.png" alt="" title="执行命令"></p>
-<p><strong>执行成功后会在libs目录下生成classes2.dex文件</strong></p>
-<p><img src="./images/04.png" alt="" title="执行命令"></p>
-<p>5.<strong>将classes2.dex文件放在项目的src根目录下</strong></p>
-<p><img src="./images/05.png" alt="" title="执行命令"></p>
-<p>6.<strong>导入multidex库到项目中 (<a href="https://github.com/lianqiangjava/lianqiangjava.github.io/tree/hexo/source/_posts/library/multidex.rar" target="_blank">点击链接下载</a>)</strong></p>
-<p><img src="./images/06.png" alt="" title="执行命令"></p>
-<p>7.<strong>在项目的BaseApplication类里重写attachBaseContext方法,执行分包</strong></p>
-<p><img src="./images/07.png" alt="" title="执行命令"></p>
-<p>8.<strong>在Java Build Path里将合成过的包对勾取消掉,因为这些包已经在classes2.dex存在,无需再次打包进dex</strong></p>
-<p><img src="./images/08.png" alt="" title="执行命令"></p>
-<p>9.<strong>编译运行程序,解压apk文件,可以看到已被分成了两个dex</strong></p>
-<p><img src="./images/09.png" alt="" title="执行命令"></p>
-<p><strong><em>END</em></strong></p>
-
-          
+          <h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/27/dex65536/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
+    
+    
+    
+
     
     
     
@@ -499,6 +496,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -553,6 +572,10 @@
         
       
     </div>
+    
+    
+    
+
     
     
     
@@ -636,7 +659,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -680,18 +721,6 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">曲连强</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Gemini
-  </a>
 </div>
 
 
@@ -770,13 +799,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android," />
 
 
 
@@ -94,27 +94,28 @@
 
 
 
-<meta name="description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
+<meta name="description" content="一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536">
+<meta name="keywords" content="android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Logic">
-<meta property="og:url" content="http://yoursite.com/2018/04/26/dex65536/index.html">
+<meta property="og:title" content="Eclipse dex 65536 问题解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/04/27/dex65536/index.html">
 <meta property="og:site_name" content="Logic">
-<meta property="og:description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
+<meta property="og:description" content="一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/01.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/02.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/03.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/04.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/05.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/06.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/07.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/08.png">
-<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/09.png">
-<meta property="og:updated_time" content="2018-04-27T11:34:24.798Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110133937?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110152471?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110226965?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110245713?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110254932?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110308599?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110321379?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180427110329879?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-04-27T14:16:04.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Logic">
-<meta name="twitter:description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
-<meta name="twitter:image" content="http://yoursite.com/2018/04/26/dex65536/images/01.png">
+<meta name="twitter:title" content="Eclipse dex 65536 问题解决方案">
+<meta name="twitter:description" content="一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -122,7 +123,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -143,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/26/dex65536/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/27/dex65536/"/>
 
 
 
 
 
-  <title> | Logic</title>
+  <title>Eclipse dex 65536 问题解决方案 | Logic</title>
   
 
 
@@ -302,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/dex65536/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/27/dex65536/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曲连强">
@@ -319,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Eclipse dex 65536 问题解决方案</h1>
         
 
         <div class="post-meta">
@@ -331,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-26T21:41:49+08:00">
-                2018-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-27T19:50:02+08:00">
+                2018-04-27
               </time>
             
 
@@ -342,6 +343,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -349,7 +372,7 @@
 
           
           
-             <span id="/2018/04/26/dex65536/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/04/27/dex65536/" class="leancloud_visitors" data-flag-title="Eclipse dex 65536 问题解决方案">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -380,7 +403,8 @@
       
 
       
-        <h1 id="Eclipse-dex-65536-问题解决方案"><a href="#Eclipse-dex-65536-问题解决方案" class="headerlink" title="Eclipse dex 65536 问题解决方案"></a>Eclipse dex 65536 问题解决方案</h1><h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
+        <h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
+<a id="more"></a>
 <h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因:"></a>产生原因:</h4><blockquote>
 <p>早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时，就容易发生方法数目超过65536，此时编译APK时就会发生Unable to execute dex这个问题。</p>
 </blockquote>
@@ -395,29 +419,40 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">其中project标签里的&apos;basedir&apos;属性填写jar包所在的文件夹路径(路径随意);</span><br><span class="line"></span><br><span class="line">jar标签里的&apos;destfile&apos;为合并后的名字(名字随意);</span><br><span class="line"></span><br><span class="line">zipfileset标签里的&apos;src&apos;为要合并的jar包名字;</span><br><span class="line"></span><br><span class="line">注意不要把APP启动时加载的jar包进行合并，不然可能导致找不到类错误</span><br></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">name</span>=<span class="string">"con"</span> <span class="attr">basedir</span>=<span class="string">"D:\workspace\MyProject\libs"</span> <span class="attr">default</span>=<span class="string">"makeSuperJar"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"makeSuperJar"</span> <span class="attr">description</span>=<span class="string">"description"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jar</span> <span class="attr">destfile</span>=<span class="string">"all.jar"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"gson-2.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"zxing.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"nineoldandroids-2.4.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"universal-image-loader-1.9.3.jar"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">jar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>3.<strong>执行命令:</strong>  <strong><em><code>ant -buildfile D:\workspace\MyProject\libs\build.xml</code></em></strong></p>
-<p><img src="./images/01.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p><strong>执行成功后会生成合并后的all.jar包</strong></p>
-<p><img src="./images/02.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110133937?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>4.<strong>然后到安卓SDK build-tool目录里使用dx.bat将合成的all.jar包编译成classes2.dex文件，执行命令:</strong></p>
 <p><strong><em><code>dx --dex --output=D:\workspace\MyProject\libs\classes2.dex D:\workspace\MyProject\libs\all.jar</code></em></strong></p>
-<p><img src="./images/03.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110152471?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p><strong>执行成功后会在libs目录下生成classes2.dex文件</strong></p>
-<p><img src="./images/04.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110226965?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>5.<strong>将classes2.dex文件放在项目的src根目录下</strong></p>
-<p><img src="./images/05.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110245713?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>6.<strong>导入multidex库到项目中 (<a href="https://github.com/lianqiangjava/lianqiangjava.github.io/tree/hexo/source/_posts/library/multidex.rar" target="_blank">点击链接下载</a>)</strong></p>
-<p><img src="./images/06.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110254932?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>7.<strong>在项目的BaseApplication类里重写attachBaseContext方法,执行分包</strong></p>
-<p><img src="./images/07.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110308599?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>8.<strong>在Java Build Path里将合成过的包对勾取消掉,因为这些包已经在classes2.dex存在,无需再次打包进dex</strong></p>
-<p><img src="./images/08.png" alt="" title="执行命令"></p>
+<p><img src="https://img-blog.csdn.net/20180427110321379?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>9.<strong>编译运行程序,解压apk文件,可以看到已被分成了两个dex</strong></p>
-<p><img src="./images/09.png" alt="" title="执行命令"></p>
-<p><strong><em>END</em></strong></p>
+<p><img src="https://img-blog.csdn.net/20180427110329879?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 
       
     </div>
     
+    
+    
+
+    
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------<i class="fafa-paw">本文结束谢谢阅读</i>-------------</div>
+    
+</div>
+      </div>
     
     
 
@@ -428,6 +463,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+        </div>
       
 
       
@@ -532,7 +573,25 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -564,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Eclipse-dex-65536-问题解决方案"><span class="nav-number">1.</span> <span class="nav-text">Eclipse dex 65536 问题解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、问题产生原因"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、问题产生原因</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错信息"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">报错信息:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产生原因"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">产生原因:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、解决方案"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方法："><span class="nav-number">1.0.2.1.</span> <span class="nav-text">实现方法：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、问题产生原因"><span class="nav-number">1.</span> <span class="nav-text">一、问题产生原因</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错信息"><span class="nav-number">1.1.</span> <span class="nav-text">报错信息:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产生原因"><span class="nav-number">1.2.</span> <span class="nav-text">产生原因:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、解决方案"><span class="nav-number">2.</span> <span class="nav-text">二、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方法："><span class="nav-number">2.1.</span> <span class="nav-text">实现方法：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -592,18 +651,6 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">曲连强</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Gemini
-  </a>
 </div>
 
 
@@ -682,13 +729,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
