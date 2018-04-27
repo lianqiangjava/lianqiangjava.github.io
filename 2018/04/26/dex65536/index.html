@@ -94,16 +94,27 @@
 
 
 
-<meta name="description" content="Hello World">
-<meta property="og:type" content="website">
+<meta name="description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Logic">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/dex65536/index.html">
 <meta property="og:site_name" content="Logic">
-<meta property="og:description" content="Hello World">
+<meta property="og:description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/01.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/02.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/03.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/04.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/05.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/06.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/07.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/08.png">
+<meta property="og:image" content="http://yoursite.com/2018/04/26/dex65536/images/09.png">
+<meta property="og:updated_time" content="2018-04-27T11:34:24.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Logic">
-<meta name="twitter:description" content="Hello World">
+<meta name="twitter:description" content="Eclipse dex 65536 问题解决方案一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536 产生原因: 早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时">
+<meta name="twitter:image" content="http://yoursite.com/2018/04/26/dex65536/images/01.png">
 
 
 
@@ -132,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/dex65536/"/>
 
 
 
 
 
-  <title>Logic</title>
+  <title> | Logic</title>
   
 
 
@@ -173,9 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,9 +287,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -310,9 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/dex65536/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -373,9 +380,7 @@
       
 
       
-        
-          
-            <h1 id="Eclipse-dex-65536-问题解决方案"><a href="#Eclipse-dex-65536-问题解决方案" class="headerlink" title="Eclipse dex 65536 问题解决方案"></a>Eclipse dex 65536 问题解决方案</h1><h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
+        <h1 id="Eclipse-dex-65536-问题解决方案"><a href="#Eclipse-dex-65536-问题解决方案" class="headerlink" title="Eclipse dex 65536 问题解决方案"></a>Eclipse dex 65536 问题解决方案</h1><h3 id="一、问题产生原因"><a href="#一、问题产生原因" class="headerlink" title="一、问题产生原因"></a>一、问题产生原因</h3><h4 id="报错信息"><a href="#报错信息" class="headerlink" title="报错信息:"></a>报错信息:</h4><p><code>Unable to execute dex: method ID not in[0, 0xffff]: 65536</code></p>
 <h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因:"></a>产生原因:</h4><blockquote>
 <p>早期的Dalvik VM内部使用short类型变量来标识方法的id，最大值限制在65536，故单个dex文件内的方法数目限制不能超过65536个，当项目中包含太多的方法或引用了过多的第三方jar包时，就容易发生方法数目超过65536，此时编译APK时就会发生Unable to execute dex这个问题。</p>
 </blockquote>
@@ -410,8 +415,6 @@
 <p><img src="./images/09.png" alt="" title="执行命令"></p>
 <p><strong><em>END</em></strong></p>
 
-          
-        
       
     </div>
     
@@ -428,151 +431,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="曲连强">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Logic">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/22/hello-world/" itemprop="url">Hello World fas</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T14:26:00+08:00">
-                2018-04-22
-              </time>
+              <a href="/2018/04/22/hello-world/" rel="next" title="Hello World fas">
+                <i class="fa fa-chevron-left"></i> Hello World fas
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/04/22/hello-world/" class="leancloud_visitors" data-flag-title="Hello World fas">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -582,10 +462,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -593,6 +474,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="gitalk-container"></div>
+    
+  </div>
+
 
         </div>
         
@@ -613,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -658,6 +554,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Eclipse-dex-65536-问题解决方案"><span class="nav-number">1.</span> <span class="nav-text">Eclipse dex 65536 问题解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、问题产生原因"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、问题产生原因</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错信息"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">报错信息:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产生原因"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">产生原因:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、解决方案"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实现方法："><span class="nav-number">1.0.2.1.</span> <span class="nav-text">实现方法：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -779,10 +691,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
@@ -817,6 +729,21 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '3a898860499006d001be',
+          clientSecret: '0e4e22e3c3c85a8ed88c49ba1b0430daf3aa5d0a',
+          repo: 'lianqiangjava.github.io',
+          owner: 'lianqiangjava',
+          admin: ['lianqiangjava'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
