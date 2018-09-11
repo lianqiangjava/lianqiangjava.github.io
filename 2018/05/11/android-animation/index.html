@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="Android动画深入分析Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。 一、 View">
+<meta name="description" content="Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。">
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android动画深入分析">
-<meta property="og:url" content="http://yoursite.com/2018/05/11/Android动画分析/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/11/android-animation/index.html">
 <meta property="og:site_name" content="GoodLogic">
-<meta property="og:description" content="Android动画深入分析Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。 一、 View">
+<meta property="og:description" content="Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T15:50:44.301Z">
+<meta property="og:updated_time" content="2018-09-11T16:17:04.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画深入分析">
-<meta name="twitter:description" content="Android动画深入分析Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。 一、 View">
+<meta name="twitter:description" content="Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。">
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/11/Android动画分析/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/11/android-animation/"/>
 
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/Android动画分析/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/android-animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="曲连强">
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/2018/05/11/Android动画分析/" class="leancloud_visitors" data-flag-title="Android动画深入分析">
+             <span id="/2018/05/11/android-animation/" class="leancloud_visitors" data-flag-title="Android动画深入分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,7 +393,8 @@
       
 
       
-        <h3 id="Android动画深入分析"><a href="#Android动画深入分析" class="headerlink" title="Android动画深入分析"></a>Android动画深入分析</h3><p>Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。</p>
+        <p>Android的动画可以分为三种:View动画、帧动画和属性动画。帧动画通过顺序播放一系列图像从而产生动画效果，如果图片过大就会导致OOM；View动画通过对场景里的对象不断做图像变换(平移、缩放、旋转、透明度)从而产生动画效果，它是一种渐进式动画，并且View动画支持自定义；属性动画通过动态地改变对象的属性从而达到动画效果，属性动画为API11的新特性。</p>
+<a id="more"></a>
 <h2 id="一、-View动画"><a href="#一、-View动画" class="headerlink" title="一、 View动画"></a>一、 View动画</h2><p>View动画的作用对象是View,它支持4种动画效果，分别为平移、缩放、旋转、透明度动画。</p>
 <h4 id="1-1-View动画的种类"><a href="#1-1-View动画的种类" class="headerlink" title="1.1 View动画的种类"></a>1.1 View动画的种类</h4><p>View动画的四种变换效果对应着Animation的四个类: TranslateAnimation、ScaleAnimation、RotateAnimation和AlphaAnimation,如下表，这四种动画既可以通过XML来定义，也可以通过代码来动态创建，对于View动画，建议采用XML来定义动画，这样可读性更好。</p>
 <table>
@@ -707,7 +708,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/dex65536/" rel="next" title="Eclipse dex 65536 问题解决方案">
+              <a href="/2018/04/27/eclipse-dex65536/" rel="next" title="Eclipse dex 65536 问题解决方案">
                 <i class="fa fa-chevron-left"></i> Eclipse dex 65536 问题解决方案
               </a>
             
@@ -851,7 +852,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android动画深入分析"><span class="nav-number">1.</span> <span class="nav-text">Android动画深入分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-View动画"><span class="nav-number"></span> <span class="nav-text">一、 View动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-View动画的种类"><span class="nav-number">0.1.</span> <span class="nav-text">1.1 View动画的种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-自定义View动画"><span class="nav-number">0.2.</span> <span class="nav-text">1.2 自定义View动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-帧动画"><span class="nav-number">0.3.</span> <span class="nav-text">1.3 帧动画</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-View动画的特殊使用场景"><span class="nav-number"></span> <span class="nav-text">二、 View动画的特殊使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-LayoutAnimation"><span class="nav-number">1.</span> <span class="nav-text">2.1 LayoutAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Activity-的切换效果"><span class="nav-number">2.</span> <span class="nav-text">2.2 Activity 的切换效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、-属性动画"><span class="nav-number"></span> <span class="nav-text">三、 属性动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-使用属性动画"><span class="nav-number">1.</span> <span class="nav-text">3.1 使用属性动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-理解插值器和估值器"><span class="nav-number">2.</span> <span class="nav-text">3.2 理解插值器和估值器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-属性动画的监听器"><span class="nav-number"></span> <span class="nav-text">3.3 属性动画的监听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-对任意属性做动画"><span class="nav-number"></span> <span class="nav-text">3.4 对任意属性做动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-使用动画的注意事项"><span class="nav-number"></span> <span class="nav-text">3.5 使用动画的注意事项</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-View动画"><span class="nav-number">1.</span> <span class="nav-text">一、 View动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-View动画的种类"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 View动画的种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-自定义View动画"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 自定义View动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-帧动画"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 帧动画</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-View动画的特殊使用场景"><span class="nav-number">2.</span> <span class="nav-text">二、 View动画的特殊使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-LayoutAnimation"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 LayoutAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Activity-的切换效果"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Activity 的切换效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、-属性动画"><span class="nav-number">3.</span> <span class="nav-text">三、 属性动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-使用属性动画"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 使用属性动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-理解插值器和估值器"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 理解插值器和估值器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-属性动画的监听器"><span class="nav-number">4.</span> <span class="nav-text">3.3 属性动画的监听器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-对任意属性做动画"><span class="nav-number">5.</span> <span class="nav-text">3.4 对任意属性做动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-使用动画的注意事项"><span class="nav-number">6.</span> <span class="nav-text">3.5 使用动画的注意事项</span></a></li></ol></div>
             
 
           </div>
