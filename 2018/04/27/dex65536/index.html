@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="GoodLogic">
 <meta property="og:description" content="一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://yoursite.com/images/dex_01.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110133937?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110152471?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110226965?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
@@ -111,11 +111,11 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110308599?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110321379?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180427110329879?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-04-27T14:16:04.317Z">
+<meta property="og:updated_time" content="2018-09-11T15:59:02.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse dex 65536 问题解决方案">
 <meta name="twitter:description" content="一、问题产生原因报错信息:Unable to execute dex: method ID not in[0, 0xffff]: 65536">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:image" content="http://yoursite.com/images/dex_01.png">
 
 
 
@@ -419,7 +419,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">其中project标签里的&apos;basedir&apos;属性填写jar包所在的文件夹路径(路径随意);</span><br><span class="line"></span><br><span class="line">jar标签里的&apos;destfile&apos;为合并后的名字(名字随意);</span><br><span class="line"></span><br><span class="line">zipfileset标签里的&apos;src&apos;为要合并的jar包名字;</span><br><span class="line"></span><br><span class="line">注意不要把APP启动时加载的jar包进行合并，不然可能导致找不到类错误</span><br></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">name</span>=<span class="string">"con"</span> <span class="attr">basedir</span>=<span class="string">"D:\workspace\MyProject\libs"</span> <span class="attr">default</span>=<span class="string">"makeSuperJar"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"makeSuperJar"</span> <span class="attr">description</span>=<span class="string">"description"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jar</span> <span class="attr">destfile</span>=<span class="string">"all.jar"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"gson-2.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"zxing.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"nineoldandroids-2.4.0.jar"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">zipfileset</span> <span class="attr">src</span>=<span class="string">"universal-image-loader-1.9.3.jar"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">jar</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>3.<strong>执行命令:</strong>  <strong><em><code>ant -buildfile D:\workspace\MyProject\libs\build.xml</code></em></strong></p>
-<p><img src="https://img-blog.csdn.net/20180427110039583?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="../../../../images/dex_01.png" alt=""></p>
 <p><strong>执行成功后会生成合并后的all.jar包</strong></p>
 <p><img src="https://img-blog.csdn.net/20180427110133937?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5xaWFuZ2phdmE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <p>4.<strong>然后到安卓SDK build-tool目录里使用dx.bat将合成的all.jar包编译成classes2.dex文件，执行命令:</strong></p>
@@ -485,8 +485,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/11/Android动画分析/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/11/Android动画分析/" rel="prev" title="Android动画深入分析">
+                Android动画深入分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
